@@ -1,10 +1,10 @@
 # https://docs.python-guide.org/dev/virtualenvs/
 # http://flask.pocoo.org/
 
-# from flask import Flask
+from flask import Flask
 # from .stuff.animal import Dog, Cat
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
 
 class Animal:
@@ -27,11 +27,11 @@ class Cat(Animal):
         self.sentence = "Meow !"
 
 
-# @app.route("/")
+@app.route("/")
 def hello():
     cat = Cat()
     dog = Dog()
     return "The dog says: {} and the cat says: {}".format(cat.talk(), dog.talk())
 
 
-print(hello())
+# print(hello())
