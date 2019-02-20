@@ -1,10 +1,12 @@
 # https://docs.python-guide.org/dev/virtualenvs/
 # http://flask.pocoo.org/
+# https://www.bogotobogo.com/python/python_fncs_map_filter_reduce.php
 
 #from flask import Flask
 from animal.animal import Cat, Dog, Tiger
 from misc.decorators import print_line
 from operator import add
+from functools import reduce
 
 #app = Flask(__name__)
 
@@ -46,10 +48,6 @@ def test_a_map_1():
 
 @print_line
 def test_a_map_2():
-    pass
-    #print(list(map(add, [1, 2, 3], [4, 5, 6])))
-    #a_new_list = list(map(lambda a_str: "Sir {}".format(a_str), animal_list))
-    #print(a_new_list)
-
+    print(reduce((lambda x, y: x+", {}".format(y)), [animal.name for animal in animal_list]))
 
 hello()
